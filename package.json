@@ -1,7 +1,6 @@
 {
   "name": "jaybar",
   "version": "1.0.0",
-  "description": "",
   "main": "java.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -27,9 +26,18 @@
     "passport-local": "^1.0.0"
   },
   "engines": {
-    "node": "v16.14.2"
+    "node": "16.14.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tiramisu800/jaybar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tiramisu800/jaybar/issues"
+  },
+  "homepage": "https://github.com/Tiramisu800/jaybar#readme",
+  "description": ""
 }

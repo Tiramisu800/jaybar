@@ -10,7 +10,10 @@ const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT;
+if (PORT == null || PORT == "") {
+    PORT = 3000;
+}
 
 /* for to validate and authentication*/
 const passport = require('passport')
