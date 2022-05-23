@@ -31,7 +31,7 @@ const {
 /*------------------------------------------*/
 
 
-app.use(session({ secret: 'somevalue' }));
+//app.use(session({ secret: 'somevalue' }));
 
 //Find users
 const initializePassport = require('./passport-config')
