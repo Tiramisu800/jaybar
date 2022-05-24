@@ -5,9 +5,14 @@ const express =require('express')
 const mongoose = require('mongoose')
 //const { createServer } = require('https')
 const bodyParser = require('body-parser')
-
+const swaggerUi = require('swagger-ui-express')
+swaggerDocument = require('./swagger.json');
 const app = express()
-
+app.use(
+    '/api-docs',
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerDocument)
+);
 app.use(bodyParser.urlencoded({ extended: false }))
 
 let PORT = process.env.PORT;
@@ -66,7 +71,6 @@ app.use(methodOverride('_method'))
 
 
 app.use(express.static(__dirname + '/public'));
-
 
 
 app.set('view-engine', 'ejs')
