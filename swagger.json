@@ -29,7 +29,7 @@
   "paths": {
     "/log": {
       "get": {
-        "tags": ["Users"],
+        "tags": ["User"],
         "responses": {
           "200": {
             "description": "OK",
@@ -39,34 +39,10 @@
           }
         }
       }
-    }
-  },
-  "definitions": {
-    "User": {
-      "required": ["name", "_id", "email"],
-      "properties": {
-        "_id": {
-          "type": "integer",
-          "uniqueItems": true
-        },
-        "email": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        }
-      }
     },
-    "Users": {
-      "type": "array",
-      "$ref": "#/definitions/User"
-    }
-  },
-
-  "paths": {
     "/reg": {
       "post": {
-        "tags": ["Users"],
+        "tags": ["User"],
         "description": "Create new user in system",
         "parameters": [
           {
@@ -90,17 +66,23 @@
       }
     }
   },
-  "delete": {
-    "summary": "Delete user with given ID",
-    "tags": ["Users"],
-    "responses": {
-      "200": {
-        "description": "User is deleted",
-        "schema": {
-          "$ref": "/modules/User"
+  "definitions": {
+    "User": {
+      "required": ["email", "name"],
+      "properties": {
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
         }
       }
+    },
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+      }
     }
-  }
 }
 
